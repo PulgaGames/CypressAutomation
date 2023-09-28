@@ -23,3 +23,19 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add("TipearLogin", (username , password)=>{
+
+    cy.get("select#sistema").select("GeoAseo Pruebas")
+    cy.get('input#inputUsuario').type(username)
+    cy.get("input#inputPass").type(password)
+
+    cy.get("#login > div > div > div > div > div.card-body > div > form > div.form-group.botones-login > div > div > button").click()
+
+})
+
+/*Cypress.Commands.add("LogOut", () =>{
+    cy.get("#dropdownBasic3 > i").click()
+    cy.get("#navbarSupportedContent > ul > li.nav-item.show.dropdown > div > a:nth-child(5) > span").click()
+
+
+})*/
